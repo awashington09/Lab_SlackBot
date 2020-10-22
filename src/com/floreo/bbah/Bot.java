@@ -13,8 +13,14 @@ public class Bot {
     // TODO: implement your bot logic!
 
     public Bot() {
+     //     Random quotes3 = new Random();
+       //   int inspiration = quotes3.nextInt(1642);
+         //   System.out.println("please work: " + inspiration);
 
-    }
+        }
+
+
+
 
     /**
      * Sample method: tests the Slack API. Prints a message indicating success or failure.
