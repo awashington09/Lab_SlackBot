@@ -4,18 +4,38 @@ import com.floreo.bbah.model.Channel;
 import com.floreo.bbah.model.Message;
 import com.floreo.bbah.network.Slack;
 import com.floreo.bbah.network.responses.*;
+import java.util.Random;
 
 import java.util.List;
 
 public class Bot {
 
 
+
     // TODO: implement your bot logic!
 
-    public Bot() {
-     //     Random quotes3 = new Random();
-       //   int inspiration = quotes3.nextInt(1642);
-         //   System.out.println("please work: " + inspiration);
+    public String inspirationalQuotes() {
+
+        String[] text = new String[4];
+
+        text[0] = "Genius is one percent inspiration and ninety-nine percent perspiration.";
+        text[1] = "You can observe a lot just by watching.";
+        text[2] = "A house divided against itself cannot stand.";
+        text[3] = "Difficulties increase the nearer we get to the goal.";
+
+        String[] author = new String[4];
+
+        author[0] = "Benjamin Franklin";
+        author[1] = "Yogi Berra";
+        author[2] = "Abraham Lincoln";
+        author[3] = "Johann Wolfgang van Goethe";
+
+        Random quotes3 = new Random();
+        int inspiration = quotes3.nextInt(4 - 1);
+
+        Slack.sendMessage(text[inspiration] + author[inspiration]);
+
+        return text[inspiration];
 
         }
 

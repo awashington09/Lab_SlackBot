@@ -1,10 +1,8 @@
 package com.floreo.bbah;
 
-import com.floreo.bbah.network.Slack;
-
-import java.util.Random;
-
 public class Main {
+
+
 
     public static void main(String[] args) {
 
@@ -14,18 +12,18 @@ public class Main {
 
         myBot.listChannels();
 
-        myBot.listMessages(Slack.BOTS_CHANNEL_ID);
-
-        Random quotes3 = new Random();
-        int inspiration = quotes3.nextInt(1642);
-        System.out.println("please work: " + inspiration);
-
-
+        //myBot.listMessages(Slack.BOTS_CHANNEL_ID);
+        
         // Post "Hello, world!" to the #bots channel
-       // myBot.sendMessageToBotsChannel("Hello, world!");
+        //myBot.sendMessageToBotsChannel("Hello, world!");
+
+        myBot.sendMessageToBotsChannel("Here is your inspirational quote!:");
+
+        myBot.inspirationalQuotes();
 
         // Post a pineapple photo to the #bots channel
         //myBot.sendMessageToBotsChannel("http://weknowyourdreams.com/images/pineapple/pineapple-07.jpg");
 
     }
 }
+
