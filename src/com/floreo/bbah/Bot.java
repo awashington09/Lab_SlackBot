@@ -4,7 +4,11 @@ import com.floreo.bbah.model.Channel;
 import com.floreo.bbah.model.Message;
 import com.floreo.bbah.network.Slack;
 import com.floreo.bbah.network.responses.*;
+<<<<<<< HEAD
 import de.ralleytn.simple.json.JSONObject;
+=======
+import java.util.Random;
+>>>>>>> 6955d2a656b3ca24494041cf8db51a5d13ddb459
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.IOException;
@@ -14,18 +18,49 @@ import java.util.List;
 
 public class Bot {
 
+
+
     // TODO: implement your bot logic!
 
-    public Bot() {
+    public String inspirationalQuotes() {
 
+        String[] text = new String[4];
+
+        text[0] = "Genius is one percent inspiration and ninety-nine percent perspiration.";
+        text[1] = "You can observe a lot just by watching.";
+        text[2] = "A house divided against itself cannot stand.";
+        text[3] = "Difficulties increase the nearer we get to the goal.";
+
+        String[] author = new String[4];
+
+        author[0] = "Benjamin Franklin";
+        author[1] = "Yogi Berra";
+        author[2] = "Abraham Lincoln";
+        author[3] = "Johann Wolfgang van Goethe";
+
+        Random quotes3 = new Random();
+        int inspiration = quotes3.nextInt(4 - 1);
+
+        Slack.sendMessage(text[inspiration] + author[inspiration]);
+
+        return text[inspiration];
+
+        }
+
+
+
+<<<<<<< HEAD
 
     }
 }
 
+=======
+>>>>>>> 6955d2a656b3ca24494041cf8db51a5d13ddb459
 
     /**
      * Sample method: tests the Slack API. Prints a message indicating success or failure.
      */
+
     public void testApi() {
         Response apiTest = Slack.testApi();
         System.out.println("API OK: " +apiTest.isOk() + "\n");
@@ -34,6 +69,7 @@ public class Bot {
     /**
      * Sample method: prints all public AccessCode3-3 channel names and ids. Prints an error message on failure.
      */
+
     public void listChannels() {
         ListChannelsResponse listChannelsResponse = Slack.listChannels();
 
